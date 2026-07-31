@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You — Aerial Informatics</title>
+
+<!-- model-viewer library -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+<style>
+  :root {
+    --bg: #0e1113;
+    --panel: #16191c;
+    --text: #f2f0ea;
+    --muted: #9a9a92;
+    --accent: #c9a24b; /* warm gold — swap to your brand color */
+    --border: #2a2d30;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 20px 48px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    text-align: center;
+  }
+
+  p.sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 28px;
+    text-align: center;
+    max-width: 320px;
+  }
+
+  model-viewer {
+    width: 100%;
+    max-width: 480px;
+    height: 380px;
+    background: var(--panel);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    --poster-color: transparent;
+  }
+
+  .ar-hint {
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .note {
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--text);
+    text-align: center;
+    max-width: 340px;
+    line-height: 1.5;
+  }
+
+  .note strong { color: var(--accent); }
+
+  footer {
+    margin-top: 40px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  footer a {
+    color: var(--muted);
+    text-decoration: underline;
+  }
+
+  footer a:hover {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+
+  <div class="eyebrow">A Small Thank You</div>
+  <h1>Thank You</h1>
+  <p class="sub">For the mentorship, the trust, and everything you taught me this summer.</p>
+
+  <model-viewer
+    src="fcr-model.glb"
+    ios-src="fcr-model.usdz"
+    alt="3D model of the project"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    ar-scale="fixed"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1"
+    environment-image="neutral"
+    poster="building-poster.jpg">
+    <button slot="ar-button" style="
+        background-color: #c9a24b;
+        border-radius: 999px;
+        border: none;
+        color: #14110a;
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 22px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      ">
+      View in AR
+    </button>
+  </model-viewer>
+
+  <p class="ar-hint">Tap "View in AR" to place it on your desk</p>
+
+  <footer>
+    Made with Aerial Informatics —
+    <a href="https://www.aerialinformatics.ca" target="_blank" rel="noopener">aerialinformatics.ca</a>
+  </footer>
+
+</body>
+</html>
